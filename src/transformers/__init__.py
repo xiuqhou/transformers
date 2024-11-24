@@ -698,6 +698,7 @@ _import_structure = {
     "models.recurrent_gemma": ["RecurrentGemmaConfig"],
     "models.reformer": ["ReformerConfig"],
     "models.regnet": ["RegNetConfig"],
+    "models.relation_detr": ["RelationDetrConfig"],
     "models.rembert": ["RemBertConfig"],
     "models.resnet": ["ResNetConfig"],
     "models.roberta": [
@@ -1230,6 +1231,7 @@ else:
     _import_structure["models.poolformer"].extend(["PoolFormerFeatureExtractor", "PoolFormerImageProcessor"])
     _import_structure["models.pvt"].extend(["PvtImageProcessor"])
     _import_structure["models.qwen2_vl"].extend(["Qwen2VLImageProcessor"])
+    _import_structure["models.relation_detr"].extend(["RelationDetrImageProcessor"])
     _import_structure["models.rt_detr"].extend(["RTDetrImageProcessor", "RTDetrImageProcessorFast"])
     _import_structure["models.sam"].extend(["SamImageProcessor"])
     _import_structure["models.segformer"].extend(["SegformerFeatureExtractor", "SegformerImageProcessor"])
@@ -3194,6 +3196,13 @@ else:
             "RegNetForImageClassification",
             "RegNetModel",
             "RegNetPreTrainedModel",
+        ]
+    )
+    _import_structure["models.relation_detr"].extend(
+        [
+            "RelationDetrForObjectDetection",
+            "RelationDetrModel",
+            "RelationDetrPreTrainedModel",
         ]
     )
     _import_structure["models.rembert"].extend(
@@ -5604,6 +5613,7 @@ if TYPE_CHECKING:
     from .models.recurrent_gemma import RecurrentGemmaConfig
     from .models.reformer import ReformerConfig
     from .models.regnet import RegNetConfig
+    from .models.relation_detr import RelationDetrConfig
     from .models.rembert import RemBertConfig
     from .models.resnet import ResNetConfig
     from .models.roberta import (
@@ -6164,6 +6174,7 @@ if TYPE_CHECKING:
         )
         from .models.pvt import PvtImageProcessor
         from .models.qwen2_vl import Qwen2VLImageProcessor
+        from .models.relation_detr import RelationDetrImageProcessor
         from .models.rt_detr import RTDetrImageProcessor, RTDetrImageProcessorFast
         from .models.sam import SamImageProcessor
         from .models.segformer import SegformerFeatureExtractor, SegformerImageProcessor
@@ -7745,6 +7756,11 @@ if TYPE_CHECKING:
             RegNetForImageClassification,
             RegNetModel,
             RegNetPreTrainedModel,
+        )
+        from .models.relation_detr import (
+            RelationDetrForObjectDetection,
+            RelationDetrModel,
+            RelationDetrPreTrainedModel,
         )
         from .models.rembert import (
             RemBertForCausalLM,
