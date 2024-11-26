@@ -1231,7 +1231,7 @@ else:
     _import_structure["models.poolformer"].extend(["PoolFormerFeatureExtractor", "PoolFormerImageProcessor"])
     _import_structure["models.pvt"].extend(["PvtImageProcessor"])
     _import_structure["models.qwen2_vl"].extend(["Qwen2VLImageProcessor"])
-    _import_structure["models.relation_detr"].extend(["RelationDetrImageProcessor"])
+    _import_structure["models.relation_detr"].extend(["RelationDetrImageProcessor", "RelationDetrImageProcessorFast"])
     _import_structure["models.rt_detr"].extend(["RTDetrImageProcessor", "RTDetrImageProcessorFast"])
     _import_structure["models.sam"].extend(["SamImageProcessor"])
     _import_structure["models.segformer"].extend(["SegformerFeatureExtractor", "SegformerImageProcessor"])
@@ -1262,6 +1262,7 @@ else:
     _import_structure["image_processing_utils_fast"] = ["BaseImageProcessorFast"]
     _import_structure["models.deformable_detr"].append("DeformableDetrImageProcessorFast")
     _import_structure["models.detr"].append("DetrImageProcessorFast")
+    _import_structure["models.relation_detr"].append("RelationDetrImageProcessorFast")
     _import_structure["models.rt_detr"].append("RTDetrImageProcessorFast")
     _import_structure["models.vit"].append("ViTImageProcessorFast")
 
@@ -6173,7 +6174,7 @@ if TYPE_CHECKING:
         )
         from .models.pvt import PvtImageProcessor
         from .models.qwen2_vl import Qwen2VLImageProcessor
-        from .models.relation_detr import RelationDetrImageProcessor
+        from .models.relation_detr import RelationDetrImageProcessor, RelationDetrImageProcessorFast
         from .models.rt_detr import RTDetrImageProcessor, RTDetrImageProcessorFast
         from .models.sam import SamImageProcessor
         from .models.segformer import SegformerFeatureExtractor, SegformerImageProcessor
@@ -6200,6 +6201,7 @@ if TYPE_CHECKING:
         from .image_processing_utils_fast import BaseImageProcessorFast
         from .models.deformable_detr import DeformableDetrImageProcessorFast
         from .models.detr import DetrImageProcessorFast
+        from .models.relation_detr import RelationDetrImageProcessorFast
         from .models.rt_detr import RTDetrImageProcessorFast
         from .models.vit import ViTImageProcessorFast
 
